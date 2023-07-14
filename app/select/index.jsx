@@ -149,7 +149,7 @@ const select = () => {
     getMenu();
   }, []);
   return (
-    <View className="bg-white    h-screen">
+    <View className="bg-white     flex-1">
       <Stack.Screen
         options={{
           title: "Select Dishes",
@@ -167,7 +167,7 @@ const select = () => {
 
       {/* food catagories */}
 
-      <View className=" ml-6 max-h-fit ">
+      <View className=" ml-6">
         <ScrollView horizontal={true}>
           {dishTypes.map((type, i) => {
             return <Catagories key={i} type={type} />;
@@ -196,7 +196,7 @@ const select = () => {
       {/* Recommended */}
       <View className="border-b-4 border-slate-100 mt-4" />
 
-      <ScrollView className="px-6 mt-3 min-h-[300px] ">
+      <ScrollView className="px-6 mt-3">
         <View className="flex flex-row items-center justify-between ">
           <Text maxFontSizeMultiplier={1.2} className="text-2xl font-bold">
             Recomended{" "}
@@ -223,7 +223,7 @@ const select = () => {
         ) : loading ? (
           <Loader />
         ) : (
-          <View className = "mb-20">
+          <View className = "pb-20">
             {dishes.map((dish, i) => {
               return <Dish key={i} dish={dish} />;
             })}
@@ -232,7 +232,7 @@ const select = () => {
       </ScrollView>
       {/* Recommended  End*/}
 
-      <TouchableOpacity className="fixed flex-row  bottom-20 bg-black m-auto justify-center items-center p-4 px-6 rounded-xl shadow-md shadow-black">
+      <TouchableOpacity className="absolute flex-row  bottom-8 bg-black  justify-center items-center p-4 px-6 rounded-xl shadow-md shadow-black left-0 right-0 mx-10 ">
         <Ionicons
           maxFontSizeMultiplier={1}
           name="fast-food-outline"
@@ -251,15 +251,6 @@ const select = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  title: {
-    fontSize: 64,
-    fontWeight: "bold",
-  },
-  subtitle: {
-    fontSize: 36,
-    color: "#38434D",
-  },
-});
+
 
 export default select;
