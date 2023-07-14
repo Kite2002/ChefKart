@@ -18,17 +18,17 @@ export default function Page() {
           className="w-full h-[300px] object-scale-cover rounded-lg"
         />
       </View>
-      <Text className=" text-orange-300" style={styles.title}>
+      <Text maxFontSizeMultiplier={1} className=" text-orange-300" style={styles.title}>
         Chef Kart
       </Text>
-      <Text style={styles.subtitle}>Most Trusted Platform to Find a Cook</Text>
+      <Text maxFontSizeMultiplier={1} style={styles.subtitle}>Most Trusted Platform to Find a Cook</Text>
       <Link
         className=" mt-4 text-center bg-orange-300 flex justify-center items-center w-64  rounded-xl shadow-lg shadow-orange-400 p-4   "
         href="/select"
         asChild
       >
         <TouchableHighlight>
-          <Text className="text-2xl text-white">Select Dishes</Text>
+          <Text maxFontSizeMultiplier={1} className="text-2xl text-white">Select Dishes</Text>
         </TouchableHighlight>
       </Link>
     </View>

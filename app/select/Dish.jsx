@@ -16,10 +16,10 @@ const Dish = ({dish}) => {
   const url = Linking.makeUrl(`/select/${dish.name}`, params );
 
   return (
-    <View className="flex flex-row py-6 border-b-2 border-slate-300 justify-between items-center">
-      <View className="flex gap-2 w-[55%]">
+    <View className="flex flex-row py-6 border-b-2 border-slate-300 justify-between items-center flex-wrap">
+      <View className="flex gap-2 w-[55%] ">
         <View className="flex flex-row items-center ">
-          <Text className="text-lg font-bold mr-1">{dish.name}</Text>
+          <Text maxFontSizeMultiplier={1} className="text-lg font-bold mr-1">{dish.name}</Text>
           <MaterialCommunityIcons
             name="square-circle"
             size={16}
@@ -32,7 +32,7 @@ const Dish = ({dish}) => {
             <AntDesign name="star" size={8} color="white" />
           </View>
         </View>
-        <View className=" flex flex-row  items-center  ">
+        <View className=" flex flex-row  items-center ">
           {
             dish.equipments.map((app ,i)=>{
               return <Appliance app = {app} key={i}/>
@@ -41,18 +41,19 @@ const Dish = ({dish}) => {
           <View className="bg-slate-300 h-full w-[1px] mx-4"></View>
           <Link  href={url} asChild>
             <TouchableOpacity>
-              <Text className="text-sm font-bold">Ingredients</Text>
-              <Text className="text-xs text-orange-400 font-bold">
+              <Text maxFontSizeMultiplier={1} className="text-sm font-bold ">Ingredients</Text>
+              <Text maxFontSizeMultiplier={1} className="text-xs text-orange-400 font-bold">
                 View List {">"}
               </Text>
             </TouchableOpacity>
           </Link>
         </View>
-        <Text className="text-slate-500">{dish.description}</Text>
+        <Text maxFontSizeMultiplier={1} className="text-slate-500 my-2">{dish.description}</Text>
       </View>
       <View className="flex justify-center items-center">
         <View className=" rounded-lg overflow-hidden">
           <ImageBackground
+           
             className="w-[140px] h-[110px]"
             source={{ uri: dish.image }}
           />
@@ -62,7 +63,7 @@ const Dish = ({dish}) => {
             <Ionicons name="add" size={18} color="orange" />
           </View>
 
-          <Text className=" text-center  text-lg text-orange-400">Add</Text>
+          <Text maxFontSizeMultiplier={1} className=" text-center  text-lg text-orange-400">Add</Text>
         </TouchableOpacity>
       </View>
     </View>

@@ -11,7 +11,7 @@ const PopularDish = ({item}) => {
         resizeMode="cover"
         source={{ uri: item.image }}
       ></ImageBackground>
-      <Text className="text-white text-base text-center font-semibold absolute">
+      <Text maxFontSizeMultiplier={1.2} className="text-white text-base text-center font-semibold absolute">
         {item.name}
       </Text>
     </View>

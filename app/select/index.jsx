@@ -132,7 +132,7 @@ const select = () => {
   const [popular, setPopular] = useState([]);
   const getMenu = async () => {
     setLoading(true);
-    setError(false)
+    setError(false);
     const response = await axios
       .get(
         "https://8b648f3c-b624-4ceb-9e7b-8028b7df0ad0.mock.pstmn.io/dishes/v1/"
@@ -149,7 +149,7 @@ const select = () => {
     getMenu();
   }, []);
   return (
-    <View className="bg-white h-screen overflow-hidden ">
+    <View className="bg-white    h-screen">
       <Stack.Screen
         options={{
           title: "Select Dishes",
@@ -179,7 +179,9 @@ const select = () => {
 
       {/* Popular Dishes */}
       <View className="ml-6">
-        <Text className="text-2xl font-bold">Popular Dishes</Text>
+        <Text maxFontSizeMultiplier={1.2} className="text-2xl font-bold">
+          Popular Dishes
+        </Text>
         <ScrollView horizontal={true}>
           {loading ? (
             <Text className="text-xl text-orange-400">Loading....</Text>
@@ -193,11 +195,16 @@ const select = () => {
       {/* Popular Dishes End */}
       {/* Recommended */}
       <View className="border-b-4 border-slate-100 mt-4" />
-      <ScrollView className="px-6 mt-3 min-h-[300px]">
+
+      <ScrollView className="px-6 mt-3 min-h-[300px] ">
         <View className="flex flex-row items-center justify-between ">
-          <Text className="text-2xl font-bold">Recomended </Text>
+          <Text maxFontSizeMultiplier={1.2} className="text-2xl font-bold">
+            Recomended{" "}
+          </Text>
           <TouchableOpacity className="bg-black px-3 py-1 rounded-lg shadow-xs shadow-slate-800">
-            <Text className="text-white text-lg">Menu</Text>
+            <Text maxFontSizeMultiplier={1} className="text-white text-lg">
+              Menu
+            </Text>
           </TouchableOpacity>
         </View>
 
@@ -216,17 +223,26 @@ const select = () => {
         ) : loading ? (
           <Loader />
         ) : (
-          dishes.map((dish, i) => {
-            return <Dish key={i} dish={dish} />;
-          })
+          <View className = "mb-20">
+            {dishes.map((dish, i) => {
+              return <Dish key={i} dish={dish} />;
+            })}
+          </View>
         )}
-        <View className="h-[60px]"></View>
       </ScrollView>
       {/* Recommended  End*/}
 
       <TouchableOpacity className="fixed flex-row  bottom-20 bg-black m-auto justify-center items-center p-4 px-6 rounded-xl shadow-md shadow-black">
-        <Ionicons name="fast-food-outline" size={28} color="white" />
-        <Text className=" text-white text-lg font-bold ml-3 mr-5">
+        <Ionicons
+          maxFontSizeMultiplier={1}
+          name="fast-food-outline"
+          size={28}
+          color="white"
+        />
+        <Text
+          maxFontSizeMultiplier={1}
+          className=" text-white text-lg font-bold ml-3 mr-5"
+        >
           3 Food Item Selcted
         </Text>
         <AntDesign name="arrowright" size={24} color="white" />
