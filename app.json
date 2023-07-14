@@ -5,6 +5,14 @@
       "bundler": "metro"
     },
     "name": "chefCart",
-    "slug": "chefCart"
+    "slug": "chefCart",
+    "extra": {
+      "eas": {
+        "projectId": "83b0bd60-a733-4283-be34-49faa1325836"
+      }
+    },
+    "android": {
+      "package": "com.batabyal.chefCart"
+    }
   }
 }
